@@ -8,7 +8,7 @@ stages:
 job:deploy:
   stage: deploy
   script:
-  - lftp -e "set ssl:verify-certificate no; open m49wo.ftp.infomaniak.com; user $FTP_USERNAME $FTP_PASSWORD; mirror -X .* -X .*/ --reverse --verbose --delete . project4.kevinallioli.com/; bye"
+  - lftp -e "set ssl:verify-certificate no; open FTP_HOST; user $FTP_USERNAME $FTP_PASSWORD; mirror -X .* -X .*/ --reverse --verbose --delete . FTP_PATH; bye"
 
   only:
   - master
