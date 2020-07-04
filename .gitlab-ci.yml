@@ -1,0 +1,14 @@
+image: alpine:latest
+before_script:
+  - apk --update add lftp
+
+stages:
+  - deploy
+  
+job:deploy:
+  stage: deploy
+  script:
+  - lftp -e "set ssl:verify-certificate no; open m49wo.ftp.infomaniak.com; user $FTP_USERNAME $FTP_PASSWORD; mirror -X .* -X .*/ --reverse --verbose --delete . project4.kevinallioli.com/; bye"
+
+  only:
+  - master
