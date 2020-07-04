@@ -8,7 +8,7 @@ stages:
 job:deploy:
   stage: deploy
   script:
-  - lftp -e "set ssl:verify-certificate no; open FTP_HOST; user $FTP_USERNAME $FTP_PASSWORD; mirror -X .* -X .*/ --reverse --verbose --delete . FTP_PATH; bye"
+  - lftp -e "set ssl:verify-certificate no; open $FTP_HOST; user $FTP_USERNAME $FTP_PASSWORD; mirror -X .* -X .*/ --reverse --verbose --delete . $FTP_PATH; bye"
 
   only:
   - master
