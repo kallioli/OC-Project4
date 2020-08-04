@@ -1,29 +1,52 @@
 <?php
 
 namespace App\config;
+use App\src\controller\BackController;
+use App\src\controller\ErrorController;
+use App\src\controller\FrontController;
 use Exception;
 
 class Router
 {
+    private $frontController;
+    private $errorController;
+    private $backController;
+    private $request;
+
+    public function __construct()
+    {
+        $this->request = new Request();
+        $this->frontController = new FrontController();
+        $this->backController = new BackController();
+        $this->errorController = new ErrorController();
+    }
+
     public function run()
     {
+        $route = $this->request->getGet()->get('route');
         try{
-            if(isset($_GET['route']))
+            if(isset($route))
             {
-                if($_GET['route'] === 'article'){
-                    require '../templates/single.php';
+                if($route === 'article'){
+                    $this->frontController->article($this->request->getGet()->get('articleId'));
+                }
+                elseif ($route === 'addArticle'){
+                    $this->backController->addArticle($this->request->getPost());
+                }
+                elseif ($route === 'editArticle'){
+                    $this->backController->editArticle($this->request->getPost(), $this->request->getGet()->get('articleId'));
                 }
                 else{
-                    echo 'page inconnue';
+                    $this->errorController->errorNotFound();
                 }
             }
             else{
-                require '../templates/home.php';
+                $this->frontController->home();
             }
         }
         catch (Exception $e)
         {
-            echo 'Erreur';
+            $this->errorController->errorServer();
         }
     }
 }
