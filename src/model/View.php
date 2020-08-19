@@ -3,6 +3,10 @@
 namespace App\src\model;
 
 use App\config\Request;
+use Twig\Loader\FilesystemLoader;
+use Twig\Error\LoaderError;
+
+
 
 class View
 {
@@ -10,11 +14,14 @@ class View
     private $title;
     private $request;
     private $session;
+    public $loader;
 
     public function __construct()
     {
         $this->request = new Request();
         $this->session = $this->request->getSession();
+        $this->loader = new FilesystemLoader(__DIR__.'./../../templates');
+
     }
 
     public function render($template, $data = [])

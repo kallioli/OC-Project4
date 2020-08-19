@@ -3,15 +3,17 @@
 namespace App\src\controller;
 
 use App\config\Parameter;
+use Twig\Environment;
 
 class FrontController extends Controller
 {
     public function home()
     {
         $articles = $this->articleDAO->getArticles();
-        return $this->view->render('home', [
-            'articles' => $articles
-        ]);
+
+        $twig = new Environment($this->view->loader);
+
+        echo $twig->render('index.html.twig',[ 'articles' => $articles]);
     }
 
     public function article($articleId)
