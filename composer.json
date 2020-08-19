@@ -4,5 +4,8 @@
       "App\\config\\":"config/",
       "App\\src\\": "src/"
     }
+  },
+  "require": {
+    "twig/twig": "^3.0"
   }
 }

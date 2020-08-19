@@ -45,6 +45,9 @@ class Router
                 elseif($route === 'flagComment'){
                     $this->frontController->flagComment($this->request->getGet()->get('commentId'));
                 }
+                elseif($route === 'unflagComment'){
+                    $this->backController->unflagComment($this->request->getGet()->get('commentId'));
+                }
                 elseif($route === 'deleteComment'){
                     $this->backController->deleteComment($this->request->getGet()->get('commentId'));
                 }
@@ -62,6 +65,15 @@ class Router
                 }
                 elseif($route === 'logout'){
                     $this->backController->logout();
+                }
+                elseif($route === 'deleteAccount'){
+                    $this->backController->deleteAccount();
+                }
+                elseif($route === 'deleteUser'){
+                    $this->backController->deleteUser($this->request->getGet()->get('userId'));
+                }
+                elseif($route === 'administration'){
+                    $this->backController->administration();
                 }
                 else{
                     $this->errorController->errorNotFound();
