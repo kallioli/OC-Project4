@@ -1,3 +1,6 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
 <!-- Main Content -->
 <div class="container">
     <div class="row">
@@ -6,13 +9,13 @@
             <div class="post-preview">
                 <a href="../public/index.php?route=article&articleId={{ article.id }}">
                     <h2 class="post-title">
-                        {{ article.title }}
+                        {{ article.title|raw }}
                     </h2>
                     <h3 class="post-subtitle">
-                        {{ article.content }}
+                        {{ article.content|raw }}
                     </h3>
                 </a>
-                <p class="post-meta">Publier par
+                <p class="post-meta">Publié par
                     <a href="#">{{ article.author }}</a>
                     le {{ article.createdat }}</p>
             </div>
@@ -27,3 +30,4 @@
 </div>
 
 <hr>
+{% endblock %}

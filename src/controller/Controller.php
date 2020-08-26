@@ -8,6 +8,8 @@ use App\src\DAO\ArticleDAO;
 use App\src\DAO\CommentDAO;
 use App\src\DAO\UserDAO;
 use App\src\model\View;
+use Twig\Environment;
+use Twig\Loader\FilesystemLoader;
 
 abstract class Controller
 {
@@ -20,6 +22,8 @@ abstract class Controller
     protected $post;
     protected $session;
     protected $validation;
+    protected $loader;
+    protected $twig;
 
     public function __construct()
     {
@@ -32,5 +36,9 @@ abstract class Controller
         $this->get = $this->request->getGet();
         $this->post = $this->request->getPost();
         $this->session = $this->request->getSession();
+        $this->loader = new FilesystemLoader('../templates/');
+        $this->twig = new Environment($this->loader,['debug'=>true]);
+        $this->twig->addGlobal("session", $this->session);
+        $this->twig->addExtension(new \Twig\Extension\DebugExtension());
     }
 }

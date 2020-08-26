@@ -3,24 +3,22 @@
 namespace App\src\controller;
 
 use App\config\Parameter;
-use Twig\Environment;
 
 class FrontController extends Controller
 {
     public function home()
     {
         $articles = $this->articleDAO->getArticles();
-
-        $twig = new Environment($this->view->loader);
-
-        echo $twig->render('index.html.twig',[ 'articles' => $articles]);
+        echo $this->twig->render('index.html.twig',
+            [ 'articles' => $articles,
+                'session'=>$this->session]);
     }
 
     public function article($articleId)
     {
         $article = $this->articleDAO->getArticle($articleId);
         $comments = $this->commentDAO->getCommentsFromArticle($articleId);
-        return $this->view->render('single', [
+        echo $twig->render('single.html.twig', [
             'article' => $article,
             'comments' => $comments
         ]);
