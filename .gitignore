@@ -1,2 +1,3 @@
 .idea/
 public/index.php
+config/dev.php
