@@ -87,11 +87,47 @@ img::-moz-selection {
   background: transparent;
 }
 
+#adminNav {
+  background-color: #23282d;
+}
+
+#adminNav ul {
+  margin: auto;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-size: 0.8em;
+  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  padding-left: 20px;
+}
+
+#adminNav a {
+  color: #ffffff;
+}
+
+#adminNav a:hover {
+  color: #c1c1c1;
+  text-decoration: none;
+}
+
+#adminNav i {
+  margin-right: 5px;
+}
+
+#adminNav .list-inline-item:not(:last-child) {
+  margin-right: 1rem;
+}
+
+.userMenu {
+  margin-right: 20px;
+}
+
+
 #mainNav {
   position: absolute;
   border-bottom: 1px solid #e9ecef;
   background-color: white;
   font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  top: unset;
 }
 
 #mainNav .navbar-brand {

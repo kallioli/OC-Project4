@@ -36,7 +36,7 @@ abstract class Controller
         $this->get = $this->request->getGet();
         $this->post = $this->request->getPost();
         $this->session = $this->request->getSession();
-        $this->loader = new FilesystemLoader('../templates/');
+        $this->loader = new FilesystemLoader('../templates/twig_template/');
         $this->twig = new Environment($this->loader,['debug'=>true]);
         $this->twig->addGlobal("session", $this->session);
         $this->twig->addExtension(new \Twig\Extension\DebugExtension());

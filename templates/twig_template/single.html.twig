@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <!-- Navigation -->
+    {{ include('nav.html.twig') }}
+
+    <!-- Header -->
+    {{ include('header.html.twig') }}
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-md-10 mx-auto">
+                {{ article.content|raw }}
+            </div>
+        </div>
+    </div>
+</article>
+
+<hr>
+{% endblock %}
