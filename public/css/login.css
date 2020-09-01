@@ -1,0 +1,65 @@
+body {
+    background-color: #f1f1f1;
+}
+
+#login {
+    width: 320px;
+    margin: auto;
+    padding: 8% 0 0;
+}
+
+#login h1 {
+    text-align: center;
+}
+
+#login a {
+    font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+#login a:hover {
+    text-decoration: none;
+}
+
+#loginform {
+    margin-top: 20px;
+    margin-left: 0;
+    padding: 26px 24px 46px;
+    font-weight: 400;
+    overflow: hidden;
+    background: #fff;
+    border: 1px solid #ccd0d4;
+    box-shadow: 0 1px 3px rgba(0,0,0,.04);
+    margin-bottom: 10px;
+}
+
+#loginform label {
+    font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    margin-bottom: 0.1rem;
+    font-size: 1.1em;
+}
+
+#loginform input[type="text"], #loginform input[type="password"] {
+    width: 100%;
+    background-color: #fbfbfb;
+    border: 1px solid #7e8993;
+    padding: 10px 5px;
+    margin-bottom: 15px;
+}
+
+#loginform input[type="submit"]:not(:disabled){
+    width: 100%;
+    background-color: #0085A1;
+    border: 1px solid #0085A1;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 800;
+    padding: 15px 25px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    border-radius: 0;
+    font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+#loginform input[type="submit"]:not(:disabled):hover {
+    background-color: #00657b;
+}

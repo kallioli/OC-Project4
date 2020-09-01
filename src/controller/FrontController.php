@@ -85,11 +85,11 @@ class FrontController extends Controller
             }
             else {
                 $this->session->set('error_login', 'Le pseudo ou le mot de passe sont incorrects');
-                return $this->view->render('login', [
+                echo $this->twig->render('login.html.twig', [
                     'post'=> $post
                 ]);
             }
         }
-        return $this->view->render('login');
+        echo $this->twig->render('login.html.twig');
     }
 }
