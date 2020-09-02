@@ -1,0 +1,38 @@
+body {
+    background-color: #f1f1f1;
+    font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+#error {
+    width: 520px;
+    margin: auto;
+    padding: 8% 0 0;
+}
+
+#error h1 {
+    text-align: center;
+}
+
+#error a:hover {
+    text-decoration: none;
+}
+
+#messageZone {
+    margin-top: 20px;
+    margin-left: 0;
+    padding: 26px 24px 46px;
+    font-weight: 400;
+    overflow: hidden;
+    background: #fff;
+    border: 1px solid #ccd0d4;
+    box-shadow: 0 1px 3px rgba(0,0,0,.04);
+    margin-bottom: 10px;
+}
+
+#messageZone img {
+    width: 100%;
+}
+
+#messageZone p {
+    margin-bottom: 0;
+}

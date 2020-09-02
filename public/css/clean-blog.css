@@ -105,7 +105,7 @@ img::-moz-selection {
 }
 
 #adminNav a:hover {
-  color: #c1c1c1;
+  color: #0085A1;
   text-decoration: none;
 }
 
@@ -119,6 +119,39 @@ img::-moz-selection {
 
 .userMenu {
   margin-right: 20px;
+}
+
+.userMenu button {
+  background-color: #23282d;
+  color: #ffffff;
+  border: solid 1px #23282d;
+  font-size: 0.8em;
+  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+
+}
+
+.userMenu button:hover {
+  color: #0085A1;
+}
+
+.userMenu button:focus {
+  outline: 0;
+}
+
+.userMenu .dropdown-menu {
+  background-color: #ffffff;
+  font-size: 0.8em;
+  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  z-index: 1040;
+}
+
+.userMenu .dropdown-menu a {
+  color: #000000 !important;
+}
+
+.userMenu .dropdown-menu a:hover {
+  color: #0085A1 !important;
+  background-color: #ffffff;
 }
 
 

@@ -11,7 +11,7 @@ class FrontController extends Controller
         $articles = $this->articleDAO->getArticles();
         echo $this->twig->render('index.html.twig',
             [ 'articles' => $articles,
-                'session'=>$this->session]);
+                'session' => $this->session]);
     }
 
     public function article($articleId)
@@ -63,13 +63,13 @@ class FrontController extends Controller
                 $this->session->set('register', 'Votre inscription a bien été effectuée');
                 header('Location: ../public/index.php');
             }
-            return $this->view->render('register', [
+            echo $this->twig->render('register.html.twig', [
                 'post' => $post,
                 'errors' => $errors
             ]);
 
         }
-        return $this->view->render('register');
+        echo $this->twig->render('register.html.twig');
     }
 
     public function login(Parameter $post)

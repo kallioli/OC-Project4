@@ -10,12 +10,15 @@
                 </li>
             </ul>
         </div>
-        <div class="userMenu">
-            <ul>
-                <li>
-                    <a href="../public/index.php?route=profile"><i class="fas fa-user"></i>kallioli</a>
-                </li>
-            </ul>
+        <div class="userMenu dropdown">
+            <button class="dropdown-toggle" type="button" data-toggle="dropdown">
+                <i class="fas fa-user"></i> kallioli
+            </button>
+            <div class="dropdown-menu">
+                <a class="dropdown-item" href="../public/index.php?route=profile"><span class="far fa-address-card"></span> Mon profile</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="../public/index.php?route=logout"><span class="fas fa-sign-out-alt"></span> Se déconnecter</a>
+            </div>
         </div>
     </div>
 </nav>

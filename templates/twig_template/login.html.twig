@@ -6,18 +6,16 @@
 
 {% block body %}
 
-    <div>
         <div id="login">
             <h1>Connexion</h1>
             <form id="loginform" method="post" action="../public/index.php?route=login">
                 <label for="pseudo">Identifiant</label>
-                <input type="text" id="pseudo" name="pseudo" value="<?= isset($post) ? htmlspecialchars($post->get('pseudo')): ''; ?>|raw">
+                <input type="text" id="pseudo" name="pseudo" value="<? = isset($post) ? htmlspecialchars($post->get('pseudo')): ''; ?>">
                 <label for="password">Mot de passe</label>
                 <input type="password" id="password" name="password">
                 <input type="submit" value="Se connecter" id="submit" name="submit">
             </form>
             <a href="../public/index.php">← Retour à l'accueil</a>
         </div>
-    </div>
 
 {% endblock %}
