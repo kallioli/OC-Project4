@@ -35,7 +35,7 @@ class FrontController extends Controller
             }
             $article = $this->articleDAO->getArticle($articleId);
             $comments = $this->commentDAO->getCommentsFromArticle($articleId);
-            return $this->view->render('single', [
+            echo $this->twig->render('single.html.twig', [
                 'article' => $article,
                 'comments' => $comments,
                 'post' => $post,

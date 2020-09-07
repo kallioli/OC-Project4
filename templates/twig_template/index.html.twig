@@ -1,7 +1,7 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    {{ dump (session) }}
+    {{ dump () }}
     {% if session.pseudo and session.role == 'admin' %}
         <!-- Admin Bar -->
         {{ include('adminbar.html.twig') }}
@@ -26,7 +26,7 @@
                             {{ article.title|raw }}
                         </h2>
                         <h3 class="post-subtitle">
-                            {{ article.content|raw }}
+                            {{ article.content|striptags|slice(0, 150)~ '…' }}
                         </h3>
                     </a>
                     <p class="post-meta">Publié par

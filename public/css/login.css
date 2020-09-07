@@ -1,5 +1,6 @@
 body {
     background-color: #f1f1f1;
+    font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
 #login {
@@ -10,10 +11,6 @@ body {
 
 #login h1 {
     text-align: center;
-}
-
-#login a {
-    font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
 #login a:hover {
@@ -33,7 +30,6 @@ body {
 }
 
 #loginform label {
-    font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
     margin-bottom: 0.1rem;
     font-size: 1.1em;
 }
@@ -57,7 +53,6 @@ body {
     letter-spacing: 1px;
     text-transform: uppercase;
     border-radius: 0;
-    font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
 #loginform input[type="submit"]:not(:disabled):hover {

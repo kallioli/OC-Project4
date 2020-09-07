@@ -34,7 +34,7 @@ class BackController extends Controller
             $comments = $this->commentDAO->getFlagComments();
             $users = $this->userDAO->getUsers();
 
-            return $this->view->render('administration', [
+            echo $this->twig->render('admin-dashboard.html.twig', [
                 'articles' => $articles,
                 'comments' => $comments,
                 'users' => $users

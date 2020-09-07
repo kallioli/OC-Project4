@@ -1,0 +1,57 @@
+body {
+    background-color: #f1f1f1;
+    font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+.blog-title {
+    margin: 15px 0;
+}
+
+table {
+    margin-top: 15px;
+    margin-bottom: 70px !important;
+    box-shadow: 0px 0px 15px 0px rgba(128,128,128,1);
+    border-top: #4e555b 1px solid;
+}
+
+thead {
+    background-color: #4e555b;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+.control-button-row {
+    display: flex;
+    flex-direction: row;
+}
+
+.control-button-col {
+    display: flex;
+    flex-direction: column;
+}
+
+.center {
+    text-align: center;
+}
+
+.left {
+    text-align: left;
+}
+
+.id {
+    width: 5%;
+}
+
+.author, .date {
+    width: 15%;
+}
+
+.action {
+    width: 23%;
+}
+
+.custom-button {
+    padding: 5px;
+    margin: 0 2px;
+    border-radius: 5px;
+}
