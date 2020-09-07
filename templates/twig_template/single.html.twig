@@ -1,6 +1,15 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
+    {{ dump (session) }}
+    {% if session %}
+
+        <!-- Admin Bar -->
+        {{ include('adminbar.html.twig') }}
+
+    {% endif %}
+
+
     <!-- Navigation -->
     {{ include('nav.html.twig') }}
 
@@ -19,4 +28,6 @@
 </article>
 
 <hr>
+
+    {{ include('footer.html.twig') }}
 {% endblock %}

@@ -9,11 +9,11 @@
     <div id="login">
         <h1>Inscription</h1>
         <form id="loginform" method="post" action="../public/index.php?route=register">
-            <label for="pseudo">Identifiant</label><br>
-            <input type="text" id="pseudo" name="pseudo" value="<?= isset($post) ? htmlspecialchars($post->get('pseudo')): ''; ?>"><br>
+            <label for="pseudo">Identifiant</label>
+            <input type="text" id="pseudo" name="pseudo">
             <?= isset($errors['pseudo']) ? $errors['pseudo'] : ''; ?>
-            <label for="password">Mot de passe</label><br>
-            <input type="password" id="password" name="password"><br>
+            <label for="password">Mot de passe</label>
+            <input type="password" id="password" name="password">
             <?= isset($errors['password']) ? $errors['password'] : ''; ?>
             <input type="submit" value="Inscription" id="submit" name="submit">
         </form>

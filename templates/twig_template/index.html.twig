@@ -1,10 +1,12 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
+    {{ dump (session) }}
+    {% if session.pseudo and session.role == 'admin' %}
+        <!-- Admin Bar -->
+        {{ include('adminbar.html.twig') }}
+    {% endif %}
 
-    <!-- Admin Bar -->
-
-    {{ include('adminbar.html.twig') }}
 
     <!-- Navigation -->
     {{ include('nav.html.twig') }}
@@ -17,6 +19,7 @@
         <div class="row">
             <div class="col-lg-8 col-md-10 mx-auto">
                 {% for article in articles  %}
+
                 <div class="post-preview">
                     <a href="../public/index.php?route=article&articleId={{ article.id }}">
                         <h2 class="post-title">
@@ -45,6 +48,5 @@
     <hr>
 
     {{ include ('footer.html.twig') }}
-
 {% endblock %}
 

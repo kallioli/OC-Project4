@@ -11,7 +11,7 @@ class FrontController extends Controller
         $articles = $this->articleDAO->getArticles();
         echo $this->twig->render('index.html.twig',
             [ 'articles' => $articles,
-                'session' => $this->session]);
+                'session'=>$this->session]);
     }
 
     public function article($articleId)
