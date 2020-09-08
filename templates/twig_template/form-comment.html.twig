@@ -1,0 +1,61 @@
+<div class="container">
+    <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+            <h4>XX Commentaires</h4>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+            {% for comment in comments %}
+                <div class="comment-container">
+                    <div class="img-container">
+                        <img src="../public/img/user-min.jpg">
+                    </div>
+                    <div class="comment-content">
+                        <div class="comment-content-header">
+                            <p class="name">{{ comment.pseudo }}</p>
+                            <p class="meta">Posté le {{ comment.createdAt|slice(0, 10) }} à {{ comment.createdAt|slice(10, 16)  }}</p>
+
+                                <a href="../public/index.php?route=flagComment&commentId={{ comment.id }}" class="disabled"><i class="fas fa-flag"></i>Ce commentaire a déjà été signalé</a>
+
+                                <a href="../public/index.php?route=flagComment&commentId={{ comment.id }}"><i class="far fa-flag"></i></a>
+
+                        </div>
+                        <div>
+                            {{ comment.content }}
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+
+
+    <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+            <h4>Laisser un commentaire </h4>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto comment-form">
+            <form method="post" action="../public/index.php?route=addComment&articleId={{ article.id }}">
+                <label for="content">Message</label>
+                <textarea id="content" name="content" rows="6"></textarea>
+                <?= isset($errors['content']) ? $errors['content'] : ''; ?>
+                <div class="subrow-comment">
+                    <div class="subrow-comment-left">
+                        <label for="pseudo">Identifiant</label><br>
+                        <input type="text" id="pseudo" name="pseudo">
+                        <?= isset($errors['pseudo']) ? $errors['pseudo'] : ''; ?>
+                    </div>
+                    <div class="subrow-comment-right">
+                        <input type="submit" value="Laisser un commentaire" id="submit" name="submit">
+                    </div>
+                </div>
+
+            </form>
+        </div>
+    </div>
+
+</div>

@@ -1,7 +1,13 @@
 {% extends 'base.html.twig' %}
 
+{% block stylesheets %}
+    <link rel="stylesheet" type="text/css" href="css/single.css" />
+{% endblock %}
+
 {% block body %}
-    {{ dump (session) }}
+    {{ dump () }}
+
+
     {% if session %}
 
         <!-- Admin Bar -->
@@ -27,7 +33,11 @@
     </div>
 </article>
 
-<hr>
+<hr class="hr-min">
+
+    {{ include('form-comment.html.twig') }}
+
+    <hr>
 
     {{ include('footer.html.twig') }}
 {% endblock %}

@@ -23,6 +23,7 @@ thead {
 .control-button-row {
     display: flex;
     flex-direction: row;
+    float: right;
 }
 
 .control-button-col {

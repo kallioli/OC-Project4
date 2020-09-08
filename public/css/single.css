@@ -1,0 +1,87 @@
+.hr-min {
+    width: 30%;
+    margin-bottom: 1.5em;
+}
+
+.comment-container {
+    display: flex;
+    flex-direction: row;
+    padding: 1em 0;
+}
+.img-container img {
+    border-radius: 50%;
+    margin-right: 15px;
+}
+
+.comment-content {
+    display: flex;
+    flex-direction: column;
+    font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+.comment-content-header .name {
+    text-transform: uppercase;
+    font-weight: bold;
+    margin: unset;
+}
+
+.comment-content-header .meta {
+    margin: 0 15px 0 0;
+    font-size: 15px;
+    display: inline-block;
+}
+
+.comment-form {
+    font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+.comment-form label {
+    width: 100%;
+    margin-top: 0.5rem;
+}
+
+.comment-form textarea {
+    width: 100%;
+    margin-bottom: 15px;
+    padding: 10px;
+}
+
+.subrow-comment {
+    display: flex;
+    flex-direction: row;
+}
+
+.subrow-comment-left {
+    width: 50%;
+    margin: auto;
+    padding: 0 15px 0 0;
+}
+
+.subrow-comment-left input {
+    width: 100%;
+    padding: 5px 10px;
+
+}
+
+.subrow-comment-right {
+    width: 50%;
+    margin: auto;
+    padding: 0 0 0 15px;
+}
+
+.subrow-comment-right input {
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 800;
+    padding: 10px 25px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    border: none;
+    background-color: #0085A1;
+    position: absolute;
+    bottom: 0;
+}
+
+.subrow-comment-right input:hover {
+    background-color: #00657b;
+}
