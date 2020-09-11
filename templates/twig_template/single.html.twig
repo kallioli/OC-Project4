@@ -6,15 +6,10 @@
 
 {% block body %}
 
-
-
     {% if session.get('pseudo') and session.get('role') == 'admin' %}
-
         <!-- Admin Bar -->
         {{ include('adminbar.html.twig') }}
-
     {% endif %}
-
 
     <!-- Navigation -->
     {{ include('nav.html.twig') }}
@@ -22,22 +17,23 @@
     <!-- Header -->
     {{ include('header.html.twig') }}
 
-<!-- Post Content -->
-<article>
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 col-md-10 mx-auto">
-                {{ article.content|raw }}
+    <!-- Post Content -->
+    <article>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-md-10 mx-auto">
+                    {{ article.content|raw }}
+                </div>
             </div>
         </div>
-    </div>
-</article>
+    </article>
 
-<hr class="hr-min">
+    <hr class="hr-min">
 
     {{ include('form-comment.html.twig') }}
 
     <hr>
 
     {{ include('footer.html.twig') }}
+
 {% endblock %}

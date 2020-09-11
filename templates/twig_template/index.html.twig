@@ -2,7 +2,7 @@
 
 {% block body %}
 
-    {% if session.get('pseudo') %}
+    {% if session.get('pseudo') and session.get('role') == 'admin' %}
         <!-- Admin Bar -->
         {{ include('adminbar.html.twig') }}
     {% endif %}
