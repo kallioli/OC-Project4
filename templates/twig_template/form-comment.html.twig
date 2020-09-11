@@ -1,8 +1,12 @@
 <div class="container">
     <div class="row">
         <div class="col-lg-8 col-md-10 mx-auto">
-            {% if comments|length < 1 %}
-            <h4>Pas de commentaires</h4>
+            {% if comments|length > 1 %}
+            <h4>{{ comments|length}} Commentaires</h4>
+                {% elseif comments|length == 1%}
+                    <h4>1 Commentaire</h4>
+                    {% else %}
+                <h4>Pas de commentaires</h4>
             {% endif %}
         </div>
     </div>
@@ -18,11 +22,11 @@
                         <div class="comment-content-header">
                             <p class="name">{{ comment.pseudo }}</p>
                             <p class="meta">Posté le {{ comment.createdAt|slice(0, 10) }} à {{ comment.createdAt|slice(10, 16)  }}</p>
-
-                                <a href="../public/index.php?route=flagComment&commentId={{ comment.id }}" class="disabled"><i class="fas fa-flag"></i>Ce commentaire a déjà été signalé</a>
-
-                                <a href="../public/index.php?route=flagComment&commentId={{ comment.id }}"><i class="far fa-flag"></i></a>
-
+                            {% if comment.flag == 1 %}
+                                <a href="../public/index.php?route=flagComment&commentId={{ comment.id }}" class="link-disabled"><i class="fas fa-flag"></i> Ce commentaire a déjà été signalé</a>
+                            {% else %}
+                                <a href="../public/index.php?route=flagComment&commentId={{ comment.id }}" title="Signaler ce commentaire" class="link"><i class="far fa-flag"></i></a>
+                            {% endif %}
                         </div>
                         <div>
                             {{ comment.content }}
@@ -36,7 +40,7 @@
 
     <div class="row">
         <div class="col-lg-8 col-md-10 mx-auto">
-            <h4>Laisser un commentaire </h4>
+            <h4 class="comment-title">Laisser un commentaire </h4>
         </div>
     </div>
     <div class="row">

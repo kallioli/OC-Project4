@@ -1,12 +1,11 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    {{ dump () }}
-    {% if session.pseudo and session.role == 'admin' %}
+
+    {% if session.get('pseudo') %}
         <!-- Admin Bar -->
         {{ include('adminbar.html.twig') }}
     {% endif %}
-
 
     <!-- Navigation -->
     {{ include('nav.html.twig') }}
@@ -48,5 +47,6 @@
     <hr>
 
     {{ include ('footer.html.twig') }}
+
 {% endblock %}
 

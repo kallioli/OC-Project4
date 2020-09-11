@@ -5,10 +5,10 @@
 {% endblock %}
 
 {% block body %}
-    {{ dump () }}
 
 
-    {% if session %}
+
+    {% if session.get('pseudo') and session.get('role') == 'admin' %}
 
         <!-- Admin Bar -->
         {{ include('adminbar.html.twig') }}

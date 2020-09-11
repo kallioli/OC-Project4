@@ -31,6 +31,26 @@
     display: inline-block;
 }
 
+.comment-content-header .link {
+    font-size: 15px;
+}
+
+.comment-content-header .link:hover {
+    color: red;
+    text-decoration: none;
+}
+
+.comment-content-header .link-disabled {
+    font-size: 15px;
+    color: red;
+    text-decoration: none;
+    pointer-events: none;
+}
+
+.comment-title {
+    margin-top: 35px;
+}
+
 .comment-form {
     font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
@@ -60,7 +80,6 @@
 .subrow-comment-left input {
     width: 100%;
     padding: 5px 10px;
-
 }
 
 .subrow-comment-right {
