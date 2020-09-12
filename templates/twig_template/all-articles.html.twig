@@ -1,0 +1,49 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    {% if session.get('pseudo') and session.get('role') == 'admin' %}
+        <!-- Admin Bar -->
+        {{ include('adminbar.html.twig') }}
+    {% endif %}
+
+    <!-- Navigation -->
+    {{ include('nav.html.twig') }}
+
+    <!-- Page Header -->
+    {{ include('header-title.html.twig') }}
+
+    <!-- Main Content -->
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-md-10 mx-auto">
+
+
+                {% for article in articles|reverse %}
+
+                    <div class="post-preview">
+                        <a href="../public/index.php?route=article&articleId={{ article.id }}">
+                            <h2 class="post-title">
+                                {{ article.title|raw }}
+                            </h2>
+                            <h3 class="post-subtitle">
+                                {{ article.content|striptags|slice(0, 150)~ '…' }}
+                            </h3>
+                        </a>
+                        <p class="post-meta">Publié par
+                            <a href="#">{{ article.author }}</a>
+                            le {{ article.createdat }}
+                        </p>
+                    </div>
+                    <hr>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+    <hr>
+
+    {{ include ('footer.html.twig') }}
+
+{% endblock %}
+

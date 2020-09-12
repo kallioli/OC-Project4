@@ -14,6 +14,13 @@ class FrontController extends Controller
                 'session'=>$this->session]);
     }
 
+    public function all()
+    {
+        $articles = $this->articleDAO->getArticles();
+        echo $this->twig->render('all-articles.html.twig',
+            [ 'articles' => $articles ]);
+    }
+
     public function article($articleId)
     {
         $article = $this->articleDAO->getArticle($articleId);

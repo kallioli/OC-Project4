@@ -75,6 +75,13 @@ class Router
                 elseif($route === 'administration'){
                     $this->backController->administration();
                 }
+                elseif ($route === 'all') {
+                    $this->frontController->all();
+                }
+                elseif ($route === 'about') {
+                    $this->frontController->about();
+                }
+
                 else{
                     $this->errorController->errorNotFound();
                 }

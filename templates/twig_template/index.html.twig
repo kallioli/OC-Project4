@@ -11,13 +11,15 @@
     {{ include('nav.html.twig') }}
 
     <!-- Page Header -->
-    {{ include('header.html.twig') }}
+    {{ include('header-title.html.twig') }}
 
     <!-- Main Content -->
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-md-10 mx-auto">
-                {% for article in articles  %}
+
+
+                {% for article in articles|slice(0, 3)  %}
 
                 <div class="post-preview">
                     <a href="../public/index.php?route=article&articleId={{ article.id }}">
@@ -38,7 +40,7 @@
 
                 <!-- Pager -->
                 <div class="clearfix">
-                    <a class="btn btn-primary float-right" href="#">Anciens articles &rarr;</a>
+                    <a class="btn btn-primary float-right" href="../public/index.php?route=all">Touts les chapitres &rarr;</a>
                 </div>
             </div>
         </div>
