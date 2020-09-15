@@ -81,7 +81,6 @@ class Router
                 elseif ($route === 'about') {
                     $this->frontController->about();
                 }
-
                 else{
                     $this->errorController->errorNotFound();
                 }

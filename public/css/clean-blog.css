@@ -154,7 +154,6 @@ img::-moz-selection {
   background-color: #ffffff;
 }
 
-
 #mainNav {
   position: absolute;
   border-bottom: 1px solid #e9ecef;
@@ -245,6 +244,7 @@ header.masthead {
   background-attachment: scroll;
   position: relative;
   background-size: cover;
+  min-height: 600px;
 }
 
 header.masthead .overlay {
@@ -296,7 +296,7 @@ header.masthead .site-heading .subheading {
 @media only screen and (min-width: 768px) {
   header.masthead .page-heading h1,
   header.masthead .site-heading h1 {
-    font-size: 80px;
+    font-size: 78px;
   }
 }
 
