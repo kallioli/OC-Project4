@@ -22,16 +22,18 @@
 
                 {{ include('author-prev.html.twig') }}
 
+                <hr class="hr-sep">
+
                 {% for article in articles|slice(0, 3)  %}
 
                 <div class="post-preview">
                     <a href="../public/index.php?route=article&articleId={{ article.id }}">
-                        <h2 class="post-title">
+                        <h3 class="post-title">
                             {{ article.title|raw }}
-                        </h2>
-                        <h3 class="post-subtitle">
-                            {{ article.content|striptags|slice(0, 150)~ '…' }}
                         </h3>
+                        <h4 class="post-subtitle">
+                            {{ article.content|striptags|slice(0, 150)~ '…' }}
+                        </h4>
                     </a>
                     <p class="post-meta">Publié par
                         <a href="#">{{ article.author }}</a>
@@ -43,7 +45,7 @@
 
                 <!-- Pager -->
                 <div class="clearfix">
-                    <a class="btn btn-primary float-right" href="../public/index.php?route=all">Touts les chapitres &rarr;</a>
+                    <a class="btn btn-primary btn-margin float-right" href="../public/index.php?route=all">Touts les chapitres &rarr;</a>
                 </div>
             </div>
         </div>

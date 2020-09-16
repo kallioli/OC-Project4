@@ -21,6 +21,7 @@
 
                 {% for article in articles|reverse %}
 
+                    {% if loop.last == false %}
                     <div class="post-preview">
                         <a href="../public/index.php?route=article&articleId={{ article.id }}">
                             <h2 class="post-title">
@@ -36,6 +37,23 @@
                         </p>
                     </div>
                     <hr>
+                    {% else %}
+                        <div class="post-preview">
+                            <a href="../public/index.php?route=article&articleId={{ article.id }}">
+                                <h2 class="post-title">
+                                    {{ article.title|raw }}
+                                </h2>
+                                <h3 class="post-subtitle">
+                                    {{ article.content|striptags|slice(0, 150)~ '…' }}
+                                </h3>
+                            </a>
+                            <p class="post-meta">Publié par
+                                <a href="#">{{ article.author }}</a>
+                                le {{ article.createdat }}
+                            </p>
+                        </div>
+                    {% endif %}
+
                 {% endfor %}
             </div>
         </div>

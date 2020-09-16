@@ -477,3 +477,52 @@ footer .copyright {
   font-size: 16px;
   padding: 25px 35px;
 }
+
+.btn-margin {
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+.author-container {
+  display: flex;
+  flex-direction: row;
+  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+.author-container img {
+  width: 200px;
+  border-radius: 50%;
+  border: 5px solid white;
+  box-shadow: 0px 0px 20px 0px rgba(84,84,84,0.75)
+}
+
+.author-content {
+  width: 100%;
+  margin-left: 20px;
+}
+
+.author-content .name {
+  margin: 0 0 15px 0;
+  display: block;
+}
+
+.author-content .name h2 {
+  font-size: 1.5em;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.author-content .name:hover {
+  text-decoration: none;
+}
+
+.hr-sep {
+  margin-top: 25px;
+  margin-bottom: 50px;
+  width: 50%;
+}
+
+.hr-min {
+  width: 30%;
+  margin-bottom: 1.5em;
+}
