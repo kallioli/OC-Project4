@@ -119,7 +119,7 @@ class BackController extends Controller
     public function profile()
     {
         if($this->checkLoggedIn()) {
-            return $this->view->render('profile');
+            echo $this->twig->render('profile.html.twig');
         }
     }
 

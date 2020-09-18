@@ -1,0 +1,58 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" type="text/css" href="css/admin.css" />
+{% endblock %}
+
+{% block body %}
+    {% if session.get('pseudo') and session.get('role') == 'admin' %}
+        <!-- Admin Bar -->
+        {{ include('admin/topbar.html.twig') }}
+    {% endif %}
+
+    <div class="container">
+
+        <div class="row">
+            <div class="col">
+                <h1 class="blog-title">Mon profil</h1>
+            </div>
+        </div>
+
+        <hr>
+
+        <div class="row">
+            <div class="col">
+                <h2>Informations utilisateur</h2>
+                <div class="user-infos">
+                    <img src="../public/img/user.png">
+                    <p><strong>Identifiant:</strong> {{ session.get('pseudo') }}</p>
+                    {% if session.get('role') == 'admin' %}
+                        <p><strong>Rôle:</strong> Administrateur</p>
+                        {% else %}
+                            <p><strong>Rôle:</strong> Utilisateur</p>
+                        {% endif %}
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <h2>Changement de mot de passe</h2>
+                <div class="password-change">
+                    <form method="post" action="../public/index.php?route=updatePassword">
+                        <label for="password">Nouveau mot de passe</label>
+                        <input type="password" id="password" name="password">
+                        <input type="submit" value="Mettre à jour" id="submit" name="submit" class="btn btn-primary btn-change-pass">
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <h2>Suppression du compte</h2>
+                <a href="../public/index.php?route=deleteAccount" class="btn btn-danger btn-account-del">Supprimer mon compte</a>
+            </div>
+        </div>
+    </div>
+{% endblock %}
