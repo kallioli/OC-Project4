@@ -8,7 +8,7 @@
     {{ dump() }}
     {% if session.get('pseudo') and session.get('role') == 'admin' %}
         <!-- Admin Bar -->
-        {{ include('adminbar.html.twig') }}
+        {{ include('topbar.html.twig') }}
     {% endif %}
 
     <div class="container">

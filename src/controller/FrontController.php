@@ -21,6 +21,11 @@ class FrontController extends Controller
             [ 'articles' => $articles ]);
     }
 
+    public function about()
+    {
+        echo $this->twig->render('about.html.twig');
+    }
+
     public function article($articleId)
     {
         $article = $this->articleDAO->getArticle($articleId);

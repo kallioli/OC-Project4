@@ -1,4 +1,4 @@
-{% extends 'base.html.twig' %}
+{% extends '../twig/base.html.twig' %}
 
 {% block stylesheets %}
     <link rel="stylesheet" type="text/css" href="css/error.css" />
@@ -7,13 +7,12 @@
 {% block body %}
 
     <div id="error">
-        <h1>Oups !</h1>
+        <h1>Oh Oh !</h1>
         <div id="messageZone">
-            <img src="../public/img/error-404.jpg">
-            <p>Désolé, la page que vous cherchez est introuvable.</p>
+            <img src="../public/img/error-500.jpg">
+            <p>Désolé, il y a un petit problème technique.</p>
         </div>
         <a href="../public/index.php">← Retour à l'accueil</a>
     </div>
-
 
 {% endblock %}

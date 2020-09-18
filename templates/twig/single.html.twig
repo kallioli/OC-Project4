@@ -8,14 +8,14 @@
 
     {% if session.get('pseudo') and session.get('role') == 'admin' %}
         <!-- Admin Bar -->
-        {{ include('adminbar.html.twig') }}
+        {{ include('admin/topbar.html.twig') }}
     {% endif %}
 
     <!-- Navigation -->
     {{ include('nav.html.twig') }}
 
     <!-- Header -->
-    {{ include('header.html.twig') }}
+    {{ include('headers/single.html.twig') }}
 
     <!-- Post Content -->
     <article>

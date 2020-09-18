@@ -1,0 +1,51 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" type="text/css" href="css/about.css" />
+{% endblock %}
+
+{% block body %}
+
+    {% if session.get('pseudo') and session.get('role') == 'admin' %}
+        <!-- Admin Bar -->
+        {{ include('admin/topbar.html.twig') }}
+    {% endif %}
+
+    <!-- Navigation -->
+    {{ include('nav.html.twig') }}
+
+    <!-- Header -->
+    {{ include('headers/about.html.twig') }}
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-md-10 mx-auto">
+                <div class="about-content">
+                    <img src="../public/img/jforteroche.jpg">
+                    <h3>Nom et prénom de l'auteur</h3>
+                    <p>Jean Forteroche</p>
+
+                    <h3>Date et lieu de naissance</h3>
+                    <p>25 mai 1963 à Marne-la-Vallée</p>
+
+                    <h3>Profession</h3>
+                    <p>Écrivain à temps complet</p>
+
+                    <h3>Si je devais décrire ma vie en quelques mots</h3>
+                    <p>Passionné par la littérature depuis le plus loin dont je puisse me souvenir, j'ai commencé à écrire à l'age de 17 ans puis j'en ai rapidement fait ma carrière qui aujourd'hui me permet d'en vivre.</p>
+                    <p>Cela n'a pas toujours été le cas, plus jeune il m'arrivait fréquement de travailler au black pour mes voisins fortunés qui tenaient une petite bijouterie qui marchait plutôt bien.</p>
+                    <p>Après ma première publication avec un éditeur j'ai rapidement eu du succès notamment grâce à ce couple de voisins qui avaient de nombreux contacts haut-placés, à qui, le bouquin avait apparemment plus.</p>
+                    <p>Puis s'en ai suivie une longue traversée du désert de 2014 à 2017 sur laquelle je reviendrais dans ce bouquin, j'ai décidé suite à celle-ci de reprendre l'écriture et c'est pourquoi je vous partage aujourd'hui ce blog qui contiendra les chapitres de mon nouveau roman.</p>
+                    <p>En effet aujourd'hui rien ne m'oblige à continuer d'écrire pour gagner ma vie mais la passion est plus forte et je souhaite que mon nouveau roman soit partagé au plus grand nombre et un blog me parrait être une bonne solution.</p>
+                    <p>Surtout n'hesitez pas à vous inscrire pour me partager vos impressions et m'aider peut-être à faire le meilleur scénario qui soit, je vous attend en commentaire.</p>
+                    <p>Votre auteur : Jean Forteroche.</p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <hr>
+
+    {{ include('footer.html.twig') }}
+{% endblock %}

@@ -5,9 +5,9 @@
 {% endblock %}
 
 {% block body %}
-    {% if session %}
+    {% if session.get('pseudo') and session.get('role') == 'admin' %}
         <!-- Admin Bar -->
-        {{ include('adminbar.html.twig') }}
+        {{ include('admin/topbar.html.twig') }}
     {% endif %}
 
     <div class="container">
