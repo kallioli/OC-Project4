@@ -45,6 +45,7 @@ class BackController extends Controller
     public function addArticle(Parameter $post)
     {
         if($this->checkAdmin()) {
+
             if ($post->get('submit')) {
                 $errors = $this->validation->validate($post, 'Article');
                 if (!$errors) {
@@ -52,12 +53,12 @@ class BackController extends Controller
                     $this->session->set('add_article', 'Le nouvel article a bien été ajouté');
                     header('Location: ../public/index.php?route=administration');
                 }
-                return $this->view->render('add_article', [
+                echo $this->twig->render('form-article.html.twig', [
                     'post' => $post,
                     'errors' => $errors
                 ]);
             }
-            return $this->view->render('add_article');
+            echo $this->twig->render('form-article.html.twig');
         }
     }
 
@@ -72,7 +73,7 @@ class BackController extends Controller
                     $this->session->set('edit_article', 'L\' article a bien été modifié');
                     header('Location: ../public/index.php?route=administration');
                 }
-                return $this->view->render('edit_article', [
+                echo $this->twig->render('form-article.html.twig', [
                     'post' => $post,
                     'errors' => $errors
                 ]);
@@ -83,7 +84,7 @@ class BackController extends Controller
             $post->set('content', $article->getContent());
             $post->set('author', $article->getAuthor());
 
-            return $this->view->render('edit_article', [
+            echo $this->twig->render('form-article.html.twig', [
                 'post' => $post
             ]);
         }

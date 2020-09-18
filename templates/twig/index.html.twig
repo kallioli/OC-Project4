@@ -4,7 +4,7 @@
 
 {% block body %}
 
-    {% if session.get('pseudo') and session.get('role') == 'admin' %}
+    {% if session.get('pseudo') and session.get('role') == 'admin' or session.get('role') == 'user' %}
         <!-- Admin Bar -->
         {{ include('admin/topbar.html.twig') }}
     {% endif %}

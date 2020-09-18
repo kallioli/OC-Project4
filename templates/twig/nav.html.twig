@@ -16,6 +16,11 @@
                 <li class="nav-item">
                     <a class="nav-link" href="../public/index.php?route=about">À propos de l'auteur</a>
                 </li>
+                {% if not session.get('pseudo') %}
+                <li class="nav-item">
+                    <a class="nav-link" href="../public/index.php?route=login">Connexion</a>
+                </li>
+                {% endif %}
             </ul>
         </div>
     </div>

@@ -5,25 +5,32 @@
 {% endblock %}
 
 {% block body %}
-    {{ dump() }}
     {% if session.get('pseudo') and session.get('role') == 'admin' %}
         <!-- Admin Bar -->
-        {{ include('topbar.html.twig') }}
+        {{ include('admin/topbar.html.twig') }}
+    {% endif %}
+
+    {% if post is defined and post.get('id') is defined %}
+      {% set chemin = 'editArticle&articleId='~post.get('id')  %}
+        {% set title = post.get('title') %}
+        {% set content = post.get('content') %}
+        {% else %}
+        {% set chemin = 'addArticle' %}
     {% endif %}
 
     <div class="container">
         <div class="row">
             <div class="col">
-                <h1>Ajouter un post</h1>
+                <h1>Ajouter un article</h1>
                 <hr>
-                <form method="post" action="../public/index.php?route=<?= $route; ?>">
+                <form method="post" action="../public/index.php?route={{ chemin }}">
                     <label for="title">Titre</label>
-                    <input type="text" id="title" name="title">
-                    <?= isset($errors['title']) ? $errors['title'] : ''; ?>
+                    <input type="text" id="title" name="title" value="{{ title }}">
+                    {{ errors.title }}
                     <label for="content">Contenu</label><br>
-                    <textarea id="content" name="content"></textarea>
-                    <?= isset($errors['content']) ? $errors['content'] : ''; ?>
-                    <input type="submit" value="<?= $submit; ?>" id="submit" name="submit">
+                    <textarea id="content" name="content">{{ content }}</textarea>
+                    {{ errors.content }}
+                    <input type="submit" value="submit" id="submit" name="submit">
                 </form>
             </div>
         </div>
