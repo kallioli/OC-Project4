@@ -4,6 +4,8 @@
     <link rel="stylesheet" type="text/css" href="css/login.css" />
 {% endblock %}
 
+{% block title %}Connexion | Jean Forteroche{% endblock %}
+
 {% block body %}
 
         <div id="login">
@@ -16,7 +18,7 @@
                 <input type="password" id="password" name="password">
                 <input type="submit" value="Se connecter" id="submit" name="submit">
             </form>
-            <a href="../public/index.php">← Retour à l'accueil</a>
+            <a href="../public/index.php">← Retour à l'accueil</a> | <a href="../public/index.php?route=register">Inscription</a>
         </div>
 
 {% endblock %}
