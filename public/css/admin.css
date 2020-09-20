@@ -84,3 +84,17 @@ thead {
 .btn-account-del {
     margin-top: 30px;
 }
+
+.btn-article-sub {
+    margin-top: 20px;
+}
+
+#title {
+    width: 100%;
+    font-size: 20px;
+    padding: 5px 15px;
+}
+
+#content {
+    height: 400px;
+}

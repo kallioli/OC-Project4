@@ -21,31 +21,29 @@
     <div class="container">
         <div class="row">
             <div class="col">
-                <h1>Ajouter un article</h1>
+                <h1 class="blog-title">Ajouter un article</h1>
                 <hr>
-                <form method="post" action="../public/index.php?route={{ chemin }}">
-                    <label for="title">Titre</label>
-                    <input type="text" id="title" name="title" value="{{ title }}">
-                    {{ errors.title }}
-                    <label for="content">Contenu</label><br>
-                    <textarea id="content" name="content">{{ content }}</textarea>
-                    {{ errors.content }}
-                    <input type="submit" value="submit" id="submit" name="submit">
-                </form>
+                <div class="article-form">
+                    <form method="post" action="../public/index.php?route={{ chemin }}">
+                        <label for="title"><h2>Titre</h2></label>
+                        <input type="text" id="title" name="title" value="{{ title }}">
+                        {{ errors.title }}
+                        <label for="content"><h2>Contenu</h2></label><br>
+                        <textarea id="content" name="content">{{ content }}</textarea>
+                        {{ errors.content }}
+                        <input type="submit" value="Enregistrer" id="submit" name="submit" class="btn btn-primary btn-article-sub">
+                    </form>
+                </div>
             </div>
         </div>
     </div>
 
     {% block javascripts %}
-        <script src="https://cdn.tiny.cloud/1/dcr7fn3jkar9o2hqjufaq45fxsqerevpp0xk6usxn91kxilz/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+        <script src="../vendor/tinymce/tinymce/tinymce.min.js"></script>
         <script>
             tinymce.init({
+                language : "fr_FR",
                 selector: 'textarea',
-                plugins: 'a11ychecker advcode casechange formatpainter linkchecker autolink lists checklist media mediaembed pageembed permanentpen powerpaste table advtable tinycomments tinymcespellchecker',
-                toolbar: 'a11ycheck addcomment showcomments casechange checklist code formatpainter pageembed permanentpen table',
-                toolbar_mode: 'floating',
-                tinycomments_mode: 'embedded',
-                tinycomments_author: 'Author name',
             });
         </script>
     {% endblock %}
