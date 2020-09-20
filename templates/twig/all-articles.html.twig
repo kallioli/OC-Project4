@@ -1,5 +1,7 @@
 {% extends 'base.html.twig' %}
 
+{% block title %}Tout les chapites | Jean Forteroche{% endblock %}
+
 {% block body %}
 
     {% if session.get('pseudo') and session.get('role') == 'admin' or session.get('role') == 'user' %}
