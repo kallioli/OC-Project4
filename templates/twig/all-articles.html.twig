@@ -30,7 +30,7 @@
                                 {{ article.title|raw }}
                             </h2>
                             <h3 class="post-subtitle">
-                                {{ article.content|striptags|slice(0, 150)~ '…' }}
+                                {{ article.content|u.truncate(150, '...')|raw }}
                             </h3>
                         </a>
                         <p class="post-meta">Publié par

@@ -9,6 +9,7 @@ use App\src\DAO\CommentDAO;
 use App\src\DAO\UserDAO;
 use App\src\model\View;
 use Twig\Environment;
+use Twig\Extra\String\StringExtension;
 use Twig\Loader\FilesystemLoader;
 
 abstract class Controller
@@ -40,5 +41,6 @@ abstract class Controller
         $this->twig = new Environment($this->loader,['debug'=>true]);
         $this->twig->addGlobal("session", $this->session);
         $this->twig->addExtension(new \Twig\Extension\DebugExtension());
+        $this->twig->addExtension(new StringExtension());
     }
 }
