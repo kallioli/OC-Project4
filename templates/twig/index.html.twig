@@ -32,7 +32,7 @@
                             {{ article.title|raw }}
                         </h3>
                         <h4 class="post-subtitle">
-                            {{ article.content|striptags|slice(0, 150)~ '…' }}
+                            {{ article.content|striptags|slice(0, 150)~ '…'|raw }}
                         </h4>
                     </a>
                     <p class="post-meta">Publié par
