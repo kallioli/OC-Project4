@@ -4,6 +4,8 @@
     <link rel="stylesheet" type="text/css" href="css/admin.css" />
 {% endblock %}
 
+{% block title %} Ajouter un post | Jean Forteroche{% endblock %}
+
 {% block body %}
     {% if session.get('pseudo') and session.get('role') == 'admin' %}
         <!-- Admin Bar -->

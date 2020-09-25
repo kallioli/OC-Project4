@@ -15,25 +15,16 @@ class Request
         $this->session = new Session($_SESSION);
     }
 
-    /**
-     * @return Parameter
-     */
     public function getGet()
     {
         return $this->get;
     }
 
-    /**
-     * @return Parameter
-     */
     public function getPost()
     {
         return $this->post;
     }
 
-    /**
-     * @return Session
-     */
     public function getSession()
     {
         return $this->session;
