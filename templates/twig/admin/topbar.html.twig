@@ -3,11 +3,11 @@
         <div class="adminMenu">
             <ul class="list-inline text-left">
                 <li class="list-inline-item itemMenu">
-                    <a href="../public/index.php"><i class="fas fa-home"></i>Accueil</a>
+                    <a href="index.php"><i class="fas fa-home"></i>Accueil</a>
                 </li>
                 {% if session.get('pseudo') and session.get('role') == 'admin' %}
                     <li class="list-inline-item">
-                        <a href="../public/index.php?route=addArticle"><i class="far fa-plus-square"></i>Ajouter un post</a>
+                        <a href="index.php?route=addArticle"><i class="far fa-plus-square"></i>Ajouter un post</a>
                     </li>
                 {% endif %}
             </ul>
@@ -17,13 +17,13 @@
                 <i class="fas fa-user"></i> {{ session.get('pseudo') }}
             </button>
             <div class="dropdown-menu">
-                <a class="dropdown-item" href="../public/index.php?route=profile"><span class="far fa-address-card"></span> Mon profil</a>
+                <a class="dropdown-item" href="index.php?route=profile"><span class="far fa-address-card"></span> Mon profil</a>
                 {% if session.get('pseudo') and session.get('role') == 'admin' %}
                     <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="../public/index.php?route=administration"><span class="fas fa-user-cog"></span> Administration</a>
+                    <a class="dropdown-item" href="index.php?route=administration"><span class="fas fa-user-cog"></span> Administration</a>
                 {% endif %}
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="../public/index.php?route=logout"><span class="fas fa-sign-out-alt"></span> Se déconnecter</a>
+                <a class="dropdown-item" href="index.php?route=logout"><span class="fas fa-sign-out-alt"></span> Se déconnecter</a>
             </div>
         </div>
     </div>
