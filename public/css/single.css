@@ -100,3 +100,12 @@
 .subrow-comment-right input:hover {
     background-color: #00657b;
 }
+
+.error_msg {
+    margin: unset;
+    color:red;
+}
+
+.error_txt {
+    border: 1px solid red;
+}

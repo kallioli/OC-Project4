@@ -48,13 +48,21 @@
         <div class="col-lg-8 col-md-10 mx-auto comment-form">
             <form method="post" action="../public/index.php?route=addComment&articleId={{ article.id }}">
                 <label for="content">Message</label>
-                <textarea id="content" name="content" rows="6"></textarea>
-                <?= isset($errors['content']) ? $errors['content'] : ''; ?>
+                {% if errors.content is defined %}
+                    <p class="error_msg">{{ errors.content }}</p>
+                    <textarea id="content" name="content" rows="6" class="error_txt"></textarea>
+                {% else %}
+                    <textarea id="content" name="content" rows="6"></textarea>
+                {% endif %}
                 <div class="subrow-comment">
                     <div class="subrow-comment-left">
                         <label for="pseudo">Identifiant</label><br>
-                        <input type="text" id="pseudo" name="pseudo">
-                        <?= isset($errors['pseudo']) ? $errors['pseudo'] : ''; ?>
+                        {% if errors.pseudo is defined %}
+                            <p class="error_msg">{{ errors.pseudo }}</p>
+                            <input type="text" id="pseudo" name="pseudo" class="error_txt">
+                        {% else %}
+                            <input type="text" id="pseudo" name="pseudo">
+                        {% endif %}
                     </div>
                     <div class="subrow-comment-right">
                         <input type="submit" value="Laisser un commentaire" id="submit" name="submit">
