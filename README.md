@@ -2,7 +2,7 @@
 
 Develop a blog engine in PHP and MySQL (OOP PHP and MVC architecture)
 
-### Project In Progress :ballot_box_with_check:
+### Project In Progress :white_check_mark:
 
 https://project4.kevinallioli.com
 
