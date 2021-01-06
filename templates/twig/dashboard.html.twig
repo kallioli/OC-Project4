@@ -43,13 +43,13 @@
                 {% for article in articles %}
                 <tr>
                     <td class="center">{{ article.id }}</td>
-                    <td><a href="../public/index.php?route=editArticle&articleId={{ article.id }}">{{ article.title }}</a></td>
+                    <td><a href="index.php?route=editArticle&articleId={{ article.id }}">{{ article.title }}</a></td>
                     <td class="center">{{ article.author }}</td>
                     <td class="center">{{ article.createdAt|slice(0, 10) }}</td>
                     <td>
                         <span class="control-button-row">
-                        <a class="btn btn-primary custom-button" href="../public/index.php?route=editArticle&articleId={{ article.id }}">Modifier</a>
-                        <a class="btn btn-danger custom-button" href="../public/index.php?route=deleteArticle&articleId={{ article.id }}">Supprimer</a>
+                        <a class="btn btn-primary custom-button" href="index.php?route=editArticle&articleId={{ article.id }}">Modifier</a>
+                        <a class="btn btn-danger custom-button" href="index.php?route=deleteArticle&articleId={{ article.id }}">Supprimer</a>
                         </span>
                     </td>
                 </tr>
@@ -79,8 +79,8 @@
                         <td class="center">{{ comment.createdAt|slice(0, 10) }}</td>
                         <td>
                             <span class="control-button-row">
-                                <a class="btn btn-primary custom-button" href="../public/index.php?route=unflagComment&commentId={{ comment.id }}">Désignaler</a>
-                                <a class="btn btn-danger custom-button" href="../public/index.php?route=deleteComment&commentId={{ comment.id }}">Supprimer</a>
+                                <a class="btn btn-primary custom-button" href="index.php?route=unflagComment&commentId={{ comment.id }}">Désignaler</a>
+                                <a class="btn btn-danger custom-button" href="index.php?route=deleteComment&commentId={{ comment.id }}">Supprimer</a>
                             </span>
                         </td>
                     </tr>
@@ -111,9 +111,9 @@
                         <td>
                             <span class="control-button-row">
                                 {% if user.role == 'admin' %}
-                                <a class="btn btn-danger disabled custom-button" href="../public/index.php?route=deleteUser&userId={{ user.id }}">Supprimer</a>
+                                <a class="btn btn-danger disabled custom-button" href="index.php?route=deleteUser&userId={{ user.id }}">Supprimer</a>
                                     {% else %}
-                                    <a class="btn btn-danger custom-button" href="../public/index.php?route=deleteUser&userId={{ user.id }}">Supprimer</a>
+                                    <a class="btn btn-danger custom-button" href="index.php?route=deleteUser&userId={{ user.id }}">Supprimer</a>
                                 {% endif %}
                             </span>
                         </td>
