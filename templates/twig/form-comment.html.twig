@@ -17,16 +17,16 @@
             {% for comment in comments %}
                 <div class="comment-container">
                     <div class="img-container">
-                        <img src="../public/img/user-min.jpg">
+                        <img src="img/user-min.jpg">
                     </div>
                     <div class="comment-content">
                         <div class="comment-content-header">
                             <p class="name">{{ comment.pseudo }}</p>
                             <p class="meta">Posté le {{ comment.createdAt|slice(0, 10) }} à {{ comment.createdAt|slice(10, 16)  }}</p>
                             {% if comment.flag == 1 %}
-                                <a href="../public/index.php?route=flagComment&commentId={{ comment.id }}" class="link-disabled"><i class="fas fa-flag"></i> Ce commentaire a déjà été signalé</a>
+                                <a href="index.php?route=flagComment&commentId={{ comment.id }}" class="link-disabled"><i class="fas fa-flag"></i> Ce commentaire a déjà été signalé</a>
                             {% else %}
-                                <a href="../public/index.php?route=flagComment&commentId={{ comment.id }}" title="Signaler ce commentaire" class="link"><i class="far fa-flag"></i></a>
+                                <a href="index.php?route=flagComment&commentId={{ comment.id }}" title="Signaler ce commentaire" class="link"><i class="far fa-flag"></i></a>
                             {% endif %}
                         </div>
                         <div>
@@ -46,7 +46,7 @@
 
     <div class="row">
         <div class="col-lg-8 col-md-10 mx-auto comment-form">
-            <form method="post" action="../public/index.php?route=addComment&articleId={{ article.id }}">
+            <form method="post" action="index.php?route=addComment&articleId={{ article.id }}">
                 <label for="content">Message</label>
                 {% if errors.content is defined %}
                     <p class="error_msg">{{ errors.content }}</p>

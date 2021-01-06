@@ -10,7 +10,7 @@
 
     <div id="login">
         <h1>Inscription</h1>
-        <form id="loginform" method="post" action="../public/index.php?route=register">
+        <form id="loginform" method="post" action="index.php?route=register">
             <label for="pseudo">Identifiant</label>
             <input type="text" id="pseudo" name="pseudo">
             <?= isset($errors['pseudo']) ? $errors['pseudo'] : ''; ?>
@@ -19,7 +19,7 @@
             <?= isset($errors['password']) ? $errors['password'] : ''; ?>
             <input type="submit" value="Inscription" id="submit" name="submit">
         </form>
-        <a href="../public/index.php">← Retour à l'accueil</a>
+        <a href="index.php">← Retour à l'accueil</a>
     </div>
 
 {% endblock %}

@@ -8,17 +8,17 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="../public/index.php">Accueil</a>
+                    <a class="nav-link" href="index.php">Accueil</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="../public/index.php?route=all">Touts les chapitres</a>
+                    <a class="nav-link" href="index.php?route=all">Touts les chapitres</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="../public/index.php?route=about">À propos de l'auteur</a>
+                    <a class="nav-link" href="index.php?route=about">À propos de l'auteur</a>
                 </li>
                 {% if not session.get('pseudo') %}
                 <li class="nav-item">
-                    <a class="nav-link" href="../public/index.php?route=login">Connexion</a>
+                    <a class="nav-link" href="index.php?route=login">Connexion</a>
                 </li>
                 {% endif %}
             </ul>

@@ -27,7 +27,7 @@
                 {% for article in articles|slice(0, 3)  %}
 
                 <div class="post-preview">
-                    <a href="../public/index.php?route=article&articleId={{ article.id }}">
+                    <a href="index.php?route=article&articleId={{ article.id }}">
                         <h3 class="post-title">
                             {{ article.title|raw }}
                         </h3>
@@ -45,7 +45,7 @@
 
                 <!-- Pager -->
                 <div class="clearfix">
-                    <a class="btn btn-primary btn-margin float-right" href="../public/index.php?route=all">Touts les chapitres &rarr;</a>
+                    <a class="btn btn-primary btn-margin float-right" href="index.php?route=all">Touts les chapitres &rarr;</a>
                 </div>
             </div>
         </div>

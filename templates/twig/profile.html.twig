@@ -26,7 +26,7 @@
             <div class="col">
                 <h2>Informations utilisateur</h2>
                 <div class="user-infos">
-                    <img src="../public/img/user.png">
+                    <img src="img/user.png">
                     <p><strong>Identifiant:</strong> {{ session.get('pseudo') }}</p>
                     {% if session.get('role') == 'admin' %}
                         <p><strong>Rôle:</strong> Administrateur</p>
@@ -41,7 +41,7 @@
             <div class="col">
                 <h2>Changement de mot de passe</h2>
                 <div class="password-change">
-                    <form method="post" action="../public/index.php?route=updatePassword">
+                    <form method="post" action="index.php?route=updatePassword">
                         <label for="password">Nouveau mot de passe</label>
                         <input type="password" id="password" name="password">
                         <input type="submit" value="Mettre à jour" id="submit" name="submit" class="btn btn-primary btn-change-pass">
@@ -53,7 +53,7 @@
         <div class="row">
             <div class="col">
                 <h2>Suppression du compte</h2>
-                <a href="../public/index.php?route=deleteAccount" class="btn btn-danger btn-account-del">Supprimer mon compte</a>
+                <a href="index.php?route=deleteAccount" class="btn btn-danger btn-account-del">Supprimer mon compte</a>
             </div>
         </div>
     </div>
