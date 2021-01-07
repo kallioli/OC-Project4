@@ -78,28 +78,32 @@
     padding: 5px 10px;
 }
 
-.subrow-comment-right {
-    width: 50%;
-    margin: auto;
-    padding: 0 0 0 15px;
-}
-
-.subrow-comment-right input {
+.subrow-comment-left input[type="submit"] {
     color: #ffffff;
     font-size: 14px;
     font-weight: 800;
     padding: 10px 25px;
     letter-spacing: 1px;
+    margin-top: 0.7rem;
     text-transform: uppercase;
     border: none;
     background-color: #0085A1;
-    position: absolute;
     bottom: 0;
+    display: block;
 }
 
-.subrow-comment-right input:hover {
+.subrow-comment-left input[type="submit"]:hover {
     background-color: #00657b;
 }
+
+.subrow-comment-right {
+    width: 50%;
+    padding: 0 0 0 15px;
+    display: flex;
+    align-items: flex-end;
+}
+
+
 
 .error_msg {
     margin: unset;
