@@ -10,7 +10,7 @@ class BackController extends Controller
     {
         if(!$this->session->get('pseudo')) {
             $this->session->set('need_login', 'Vous devez vous connecter pour accéder à cette page');
-            header('Location: ../public/index.php?route=login');
+            header('Location: index.php?route=login');
         } else {
             return true;
         }
@@ -21,7 +21,7 @@ class BackController extends Controller
         $this->checkLoggedIn();
         if(!($this->session->get('role') === 'admin')) {
             $this->session->set('not_admin', 'Vous n\'avez pas le droit d\'accéder à cette page');
-            header('Location: ../public/index.php?route=profile');
+            header('Location: index.php?route=profile');
         } else {
             return true;
         }
@@ -51,7 +51,7 @@ class BackController extends Controller
                 if (!$errors) {
                     $this->articleDAO->addArticle($post, $this->session->get('id'));
                     $this->session->set('add_article', 'Le nouvel article a bien été ajouté');
-                    header('Location: ../public/index.php?route=administration');
+                    header('Location: index.php?route=administration');
                 }
                 echo $this->twig->render('form-article.html.twig', [
                     'post' => $post,
@@ -71,7 +71,7 @@ class BackController extends Controller
                 if (!$errors) {
                     $this->articleDAO->editArticle($post, $articleId, $this->session->get('id'));
                     $this->session->set('edit_article', 'L\' article a bien été modifié');
-                    header('Location: ../public/index.php?route=administration');
+                    header('Location: index.php?route=administration');
                 }
                 echo $this->twig->render('form-article.html.twig', [
                     'post' => $post,
@@ -95,7 +95,7 @@ class BackController extends Controller
         if($this->checkAdmin()) {
             $this->articleDAO->deleteArticle($articleId);
             $this->session->set('delete_article', 'L\' article a bien été supprimé');
-            header('Location: ../public/index.php?route=administration');
+            header('Location: index.php?route=administration');
         }
     }
 
@@ -104,7 +104,7 @@ class BackController extends Controller
         if($this->checkAdmin()) {
             $this->commentDAO->unflagComment($commentId);
             $this->session->set('unflag_comment', 'Le commentaire a bien été désignalé');
-            header('Location: ../public/index.php?route=administration');
+            header('Location: index.php?route=administration');
         }
     }
 
@@ -113,7 +113,7 @@ class BackController extends Controller
         if($this->checkAdmin()) {
             $this->commentDAO->deleteComment($commentId);
             $this->session->set('delete_comment', 'Le commentaire a bien été supprimé');
-            header('Location: ../public/index.php?route=administration');
+            header('Location: index.php?route=administration');
         }
     }
 
@@ -130,7 +130,7 @@ class BackController extends Controller
             if ($post->get('submit')) {
                 $this->userDAO->updatePassword($post, $this->session->get('pseudo'));
                 $this->session->set('update_password', 'Le mot de passe a été mis à jour');
-                header('Location: ../public/index.php?route=profile');
+                header('Location: index.php?route=profile');
             }
             return $this->view->render('update_password');
         }
@@ -158,7 +158,7 @@ class BackController extends Controller
         if($this->checkAdmin()) {
             $this->userDAO->deleteUser($userId);
             $this->session->set('delete_user', 'L\'utilisateur a bien été supprimé');
-            header('Location: ../public/index.php?route=administration');
+            header('Location: index.php?route=administration');
         }
     }
 
@@ -171,6 +171,6 @@ class BackController extends Controller
         } else {
             $this->session->set($param, 'Votre compte a bien été supprimé');
         }
-        header('Location: ../public/index.php');
+        header('Location: index.php');
     }
 }
